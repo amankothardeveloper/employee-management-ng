@@ -1,1 +1,25 @@
-<app-svg-paths></app-svg-paths>
+<div>
+    <p>
+        {{ loggedInUser ? 'Logged in as ' + loggedInUser.name : 'Not logged in' }}
+    </p>
+
+    <div>
+
+        <input type="email" placeholder="Email" [(ngModel)]="email" />
+        <input type="password" placeholder="Password" [(ngModel)]="password" />
+        <input type="text" placeholder="Name" [(ngModel)]="name" />
+
+        <button (click)="login(email, password)">
+            Login
+        </button>
+
+        <button (click)="register(email, password, name)">
+            Register
+        </button>
+
+        <button (click)="logout()">
+            Logout
+        </button>
+        <app-svg-paths></app-svg-paths>
+    </div>
+</div>
